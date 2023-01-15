@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Javascript</h1>
+
+    <button id="clickMe">Click Me</button> -->
+</body>
+<script>
+    
+//a.This inside an object-
+// let johnRoom = {
+//     table:'johans table'
+// }
+// console.log(johnRoom.table);//johans table
+
+
+
+//b.This inside method-
+// let johnRoom = {
+//     table:'johns table',
+//     clearTable(){
+//         console.log(`clearing ${this.table}`);
+//     }
+// };
+// johnRoom.clearTable();//clearing johns table
+
+//c.This inside function-
+// this.table = 'window table';
+// const cleanTable = function(soap){
+//     console.log(`cleaning ${this.table} using ${soap}`);
+
+// }
+// cleanTable.call(this,'soap');//cleaning window table using soap
+
+
+//d.This inside innerfunction-
+// this.table = 'window table';
+// const clearTable = function(soap){
+//     const innerfunction = (soap)=>{
+//         console.log(`cleaning ${this.table} using ${soap}`);
+//     }
+//     innerfunction(soap);
+// }
+// clearTable();
+
+
+//e.This inside constructer-
+// let createRoom = function(name){
+//     this.table = `${name}s table`;
+// }
+// createRoom.prototype.clearTable = function(soap){
+//     console.log(`cleaning ${this.table} using ${soap}`);
+// }
+// const jillRoom = new createRoom('jill');
+// const johnRoom = new createRoom('john');
+// jillRoom.clearTable('some soap');//cleaning jills table using some soap
+// johnRoom.clearTable('some soap');//cleaning johns table using some soap
+
+
+
+//f.This inside class-
+// class createRoom{
+//     constructor(name){
+//         this.table = `${name}s table`;
+//     }
+//     clearTable(soap){
+//         console.log(`cleaning ${this.table} using ${soap}`);
+//     }
+// }
+// const jillRoom = new createRoom('jill');
+// const johnRoom = new createRoom('john');
+// jillRoom.clearTable('some soap');//cleaning jills table using some soap
+// johnRoom.clearTable('some soap');//cleaning johns table using some soap
+
+//5
+// let count = 0;
+// class student{
+   
+//     constructor(name,age,phone,marks){
+//         this.name = `${name}`;
+//         this.age = `${age}`;
+//         this.phone = `${phone}`;
+//         this.marks = `${marks}`;
+//         count++;
+        
+//     }
+//     check_student(){
+//         if (this.marks > 40){
+//             console.log(`${this.name} is eligible`);
+//         }
+//         else{
+//             console.log(`${this.name} is not eligible`);
+//         }
+//     }
+//     check_obj_created(){
+//         console.log(count);
+//     }
+// }
+// const jill = new student('jill',20,255626346,43);
+// jill.check_student();
+// const john = new student('john',21,3252336,39);
+// john.check_student();
+// const ram = new student('ram',23,2352626,32);
+// ram.check_student();
+// const arun = new student('arun',24,336363446,45);
+// arun.check_student();
+// const willy = new student('willy',25,36343242,67);
+// willy.check_student();
+// willy.check_obj_created();
+
+
+
+//arrow function
+
+// var getA = (a) => a;
+// console.log(getA(1));//1
+
+// let square = a => a*a;
+// console.log(square(2));//4
+
+// var a = 4;
+// let square = () => {return a*a};
+// console.log(square());//16
+
+// let mult = (a,b)=>{return a*b};
+// console.log(mult(2,4));//8
+
+// var x = function(){
+//     var that = this;
+//     this.val = 1;
+//     setTimeout(function(){
+//         that.val++;
+//         console.log(that.val)       //2
+//     },1)
+// };
+// var xx = new x();
+
+
+// var x = function(){
+//     this.val = 1;
+//     setTimeout(()=>{
+//         this.val++;
+//         console.log(this.val)
+//     },1)
+// };
+// var xx = new x();//2
+
+// var x = function(){
+//     console.log(arguments[0]);//1
+// };
+// x(1,2,3);
+
+// var x = (...n)=>{
+//     console.log(n[0]);//1
+// };
+// x(1,2,3);
+
+
+
+
+
+
+
+
+
+
+
+
+// class student{
+   
+//     constructor(name,age,phone,marks){
+//         this.name = name;
+//         this.age = age;
+//         this.phone = phone;
+//         this.marks = marks;
+        
+        
+//     }
+//     setPlacementAge(minPlacementAge){
+//         return  (minMarks) => {
+//             if(this.marks > minMarks && this.age > minPlacementAge){
+//                 console.log(this.name + "is ready for placement");
+//             }
+//             else{
+//                 console.log(this.name + "is not ready for placement");
+//             }
+//         }
+//     }
+// }
+
+// const Yash = new student('yash',25,75);
+// const Vaibhav = new student('vaibhav',13,35);
+// Yash.setPlacementAge(18)(40);
+// Vaibhav.setPlacementAge(18)(40);
+
+
+//callbacks in js
+
+//eventListener in js
+
+
+// function attachEventlistners(){
+//     let count = 0;
+//     document.getElementById("clickMe").addEventListener("click",function xyz(){
+//     console.log("Button clicked",++count);
+// });
+
+// };
+// attachEventlistners();
+
+
+// setTimeout(() => console.log('timer expired'), 1000)
+// function x(y) {
+// console.log('inside x');
+// y();
+// }
+// x(function y(){
+// console.log('inside y')
+// })
+
+
+
+// setTimeout(() => console.log('timer1 expired'), 1000)
+// setTimeout(() => console.log('timer2 expired'), 0)
+// function x(y) {
+// console.log('inside x');
+// y();
+// }
+// x(function y(){
+// console.log('inside y')
+// })
+
+
+
+// setTimeout(() => console.log('timer1 expired'), 1000)
+// setTimeout(() => console.log('timer2 expired'), 0)
+// function x(y) {
+// console.log('inside x');
+// y();
+// }
+// x(function y(){
+// setTimeout(() => console.log('inside y'), 0)
+// })
+
+    
+
+// function attachEventlistners(){
+//     let count = 0;
+//     document.getElementById("clickMe").addEventListener("click",function xyz(){
+//     console.log("Button clicked",++count);
+// });
+
+// };
+// attachEventlistners();
+
+// function DOMCONTENTLOADED(){
+   
+//     document.getElementById("clickMe").addEventListener("click",()=>{
+//     console.log("DOM has loaded");
+// })};
+
+// DOMCONTENTLOADED();
+
+// console.log('a');
+// console.log('b');
+// setTimeout(() => console.log('c'), 1000)
+// console.log('d')
+
+
+// console.log('a');
+// console.log('b');
+// setTimeout(() => console.log('c'), 0)
+// console.log('d')
+
+
+// console.log('a');
+// console.log('b');
+// setTimeout(() => console.log('e'), 1000)
+// setTimeout(() => console.log('c'), 0)
+// console.log('d')
+
+
+
+// const arr =[{id:1,name:"yash"},{id:10,name:"jas"}];
+// arr.forEach((elem)=>console.log(elem.id));
+
+
+// var studentobj = {
+// 'yash': 26,
+// 'vaibhav': 24,
+// 'rajesh' : 25,
+// 'ram' : 25,
+// };
+
+// function findaverageage(){
+
+// const keysArr = Object.keys(studentobj);
+// //console.log(keysArr);
+// var sum = 0;
+// keysArr.forEach((elem)=>{
+//     //console.log(studentobj[elem]);
+//     sum = sum + studentobj[elem];
+// });
+// console.log(sum);
+
+// var averageAge = sum/keysArr.length;
+
+// return averageAge;
+
+// }
+// console.log(findaverageage());
+
+
+</script>
+</html>

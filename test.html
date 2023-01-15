@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+// 1.Call->
+// var obj1 = {num:5};
+//  var addtothis = function(a){
+//     return this.num + a;
+//  }
+//  console.log(addtothis.call(obj1,5));//10
+
+// 2.Applay->
+// var obj1 = {num:5};
+//  var addtothis = function(a,b,c){
+//     return this.num + a + b + c;
+//  }
+//  argument = [1,2,3]
+//  console.log(addtothis.apply(obj1,argument));//11
+
+
+// 3.Bind->
+// var obj1 = {num:5};
+// var addtothis = function(a,b,c){
+//     return this.num + a + b + c;
+//  }
+//  var bound = addtothis.bind(obj1);
+//  console.log(bound(1,2,3));//11
+
+
+// 4.
+
+// var student = {age:20};
+//  var show = function(){
+//     return this.age;
+//  }
+//  var bound = show.bind(student);
+//  console.log(bound());//20
+
+
+
+
+
+// 5.a)Using bind-
+// let multiply = function(x,y){
+//     console.log(x*y);
+// }
+// let multiplyByTwo = multiply.bind(this,2);
+// multiplyByTwo(5);//10
+// let multiplyByThree = multiply.bind(this,3);
+// multiplyByThree(5);//15
+
+
+// b)Using closure-
+// let multiply = function (x){
+//     return function(y){
+//         console.log(x*y);
+//     }
+// }
+// let multiplyByTwo=multiply(2);
+// multiplyByTwo(3);//6
+// let multiplyByThree=multiply(3);
+// multiplyByThree(10);//30
+
+
+
+
+// function y(){
+// setTimeout(() => console.log(a), 1000)
+// console.log('Done Coding')
+// }
+// y();
+
+// function y(){
+// setTimeout(() => console.log(a), 0)
+// console.log('Done Coding')
+// }
+// y();
+
+
+// function y(){
+// for(var i=1;i<6;i++){
+// setTimeout(() => console.log(i ), i * 1000)
+// }
+// console.log('Done Coding')
+// }
+// y();
+
+
+// function y(){
+// for(let i=1;i<6;i++){
+// setTimeout(() => console.log(i ), i * 1000)
+// }
+// console.log('Done Coding')
+// }
+// y();
+
+
+
+
+
+// var count = 0;
+// const fun = (arr)=>{
+//     return ()   => {
+//         console.log('hello'+arr[count]);
+//         count++;
+//     }
+// }
+// const name = fun(['ram','shayam']);
+// name();
+// name();
+
+
+// a()
+
+// b()
+
+
+// function a(){
+
+// console.log('inside a');
+
+// }
+
+
+// var b = function (){
+
+// console.log('inside b');
+
+// }
+
+
+
+
+
+
+
+
+// function fun1(){
+//     console.log("function 1 is called");
+//     return function fun2(){
+//         console.log("function 2 is called");
+//         return ()   =>  {
+//             console.log("function 3 is called");
+//         }
+//     }
+// }
+
+// fun1()()();
+
+
+</script>
+</html>
